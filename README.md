@@ -12,11 +12,10 @@ The CoinSimple WP e-Commerce plugin is an extension of the WP e-Commerce plugin 
 
 *Do not attempt to install this plugin through the WordPress Plugins dashboard. Use the following instructions, instead.*
 
-1. [Download a zip file of the plugin](https://github.com/coinsimple/coinsimple-wpecommerce/archive/master.zip) and extract its contents, or clone the repository on your computer:
-  `git clone https://github.com/coinsimple/coinsimple-wpecommerce.git`
+1. [Download a zip file of the plugin](https://github.com/coinsimple/coinsimple-wpecommerce/archive/master.zip).
+2. Log in to your WordPress site as administrator and click on "Plugins"->"Add New"->"Upload"->"Choose file" and select the zip file you downloaded. Click on "Install Now" followed by "Activate Plugin".
 
-2. Copy and paste the **wpsc-merchants** directory into the WP eCommerce directory, usually under `/wp-content/plugins/wp-e-commerce`.
-
+At this point the plugin is installed and activated but it still needs to be enabled and configured.
 
 ## Configuration
 
@@ -37,7 +36,7 @@ The CoinSimple WP e-Commerce plugin is an extension of the WP e-Commerce plugin 
 
   ![Business ID, API key and callback URL](/media/wpecommerce/wpecommerce-plugin-screen-payments-coinsimple-settings.png)
 
-5. Click Update.
+5. Click "Update".
 
 ## Use
 
@@ -62,14 +61,14 @@ The CoinSimple WP e-Commerce plugin is an extension of the WP e-Commerce plugin 
 * Ensure a valid SSL certificate is installed on your server. Also ensure your root CA cert is updated. If your CA cert is not current, you will see curl SSL verification errors.
 * Verify that your web server is not blocking POSTs from servers it may not recognize. Double check this on your firewall as well, if one is being used.
 * Check the system error log file (usually the web server error log) for any errors during CoinSimple payment attempts. If you contact CoinSimple support, they will ask to see the log file to help diagnose the problem.
-* If all else fails, send an email describing your issue in detail to [support@coinsimple.com](mailto:support@coinsimple.com).
+* If all else fails, send an email describing your issue in detail to [support@coinsimple.com](mailto:support@coinsimple.com). In your support request, please provide:
+	* Wordpress version
+	* WP eCommerce version
+	* PHP version
+	* Other plugins installed
+	* Configuration settings for the CoinSimple plugin
+	* Screenshot of error messages, if any
 
-NOTE: When contacting support it will help us if you provide:
-
-* Wordpress Version
-* WP e-Commerce Version
-* PHP Version
-* Other plugins you have installed
 
 ## Contribute
 
