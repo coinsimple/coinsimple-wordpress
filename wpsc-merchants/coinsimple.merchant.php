@@ -168,14 +168,14 @@ function gateway_coinsimple($seperator, $sessionid)
 		$options['email'] = $userinfo["billingemail"];
 	}
 
-	$options['items'] = [];
+	$options['items'] = array();
 
 	foreach ($wpsc_cart->cart_items as $item) {
-		$options['items'][] = [
+		$options['items'][] = array(
 			"price" => $item->unit_price,
 			"quantity" => $item->quantity,
 			"description" => $item->product_name
-		];
+		);
 	}
 
 	if (get_option('permalink_structure') != '') {
@@ -197,7 +197,7 @@ function gateway_coinsimple($seperator, $sessionid)
 	$business = new \CoinSimple\Business(get_option('coinsimple_shopid'), get_option('coinsimple_apikey'));
 	$res = $business->sendInvoice($invoice);
 
-	if ($res['status'] == "error") {
+	if ($res->status == "error") {
 
 		// close order
 		$sql = "UPDATE `" . WPSC_TABLE_PURCHASE_LOGS . "` SET `processed`= '5' WHERE `sessionid`=" . $sessionid;
@@ -211,7 +211,7 @@ function gateway_coinsimple($seperator, $sessionid)
 		$wpsc_cart->empty_cart();
 
 		unset($_SESSION['WpscGatewayErrorMessage']);
-		header('Location: ' . $res['url']);
+		wp_redirect($res->url);
 
 		exit();
 	}
