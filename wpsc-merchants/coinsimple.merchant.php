@@ -219,10 +219,6 @@ function gateway_coinsimple($seperator, $sessionid)
 }
 
 function process_coinsimple_callback($business) {
-	if (!$api_key) {
-		return array('error' => 'No API key');
-	}
-
 	$post = file_get_contents("php://input");
 
 	if (!$post) {
@@ -258,7 +254,7 @@ function coinsimple_callback()
 		$response = process_coinsimple_callback($business);
 
 		if (isset($response['error'])) {
-			debuglog($response);
+			debuglog2($response);
 		} else if ($response['status'] == "paid"){
 			$sessionid = $response['custom'];
 			$sql = "UPDATE `" . WPSC_TABLE_PURCHASE_LOGS . "` SET `processed`= '3' WHERE `sessionid`=" . $sessionid;
