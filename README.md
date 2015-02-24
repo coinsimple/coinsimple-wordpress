@@ -13,7 +13,7 @@ The CoinSimple WP e-Commerce plugin is an extension of the WP e-Commerce plugin 
 *Do not attempt to install this plugin through the WordPress Plugins dashboard. Use the following instructions, instead.*
 
 1. [Download a zip file of the plugin](https://github.com/coinsimple/coinsimple-wpecommerce/archive/v1.zip).
-2. Log in to your WordPress site as administrator and click on "Plugins"->"Add New"->"Upload"->"Choose file" and select the zip file you downloaded. Click on "Install Now" followed by "Activate Plugin".
+2. Log in to your WordPress site using ssh and copy the file  your ``wp-content/plugins/wp-e-commerce`` directory that contains the WP eCoomerce files. Unzip the file there.
 
 At this point the plugin is installed and activated but it still needs to be enabled and configured.
 
